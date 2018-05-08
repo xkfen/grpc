@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pb;
+
+service Approval {
+    rpc ApprovalRpcHandler (ApprovalRpcReqMsg) returns (ApprovalReplyMsg) {}
+}
+
+message ApprovalRpcReqMsg {
+    string Method = 1;
+    string RpcRequest = 2;
+    string ApprovalType = 3;
+    string Username = 4;
+    string name = 5;
+    bool   IsAuth = 6;
+}
+
+message ApprovalReplyMsg {
+    string RpcReply = 1;
+}
